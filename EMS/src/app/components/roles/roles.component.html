@@ -1,0 +1,30 @@
+<div class="row-3">
+    <div class="col-2">
+        <h2>
+            hi {{firstName}} {{lastName}} welcome to the roles page
+
+        </h2>
+        <p>{{selectedstate}}</p>
+    </div>
+    <div class="col-3">
+        <select [(ngModel)]="selectedstate" aria-placeholder="select state">
+            <option value="AP">Andhra Pradesh</option>
+            <option value="TL">Telangana</option>
+            <option value="TN">Tamil Nadu</option>
+        </select>
+    </div>
+</div>
+
+
+
+<div class = "row-1">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showsomemesaage()">show alert </button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-secondary" (click)="showgratitude('thankyou for joinig')">show alert </button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-primary" (click)="showinput()">yes </button>
+    </div>
+</div>
