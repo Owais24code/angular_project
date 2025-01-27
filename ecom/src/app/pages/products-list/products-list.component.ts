@@ -1,7 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { IProduct } from '../../models/product-list';
 import { CommonModule } from '@angular/common';
 import { PrimaryButtonComponent } from "../../components/primary-button/primary-button.component";
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-products-list',
@@ -23,7 +24,7 @@ import { PrimaryButtonComponent } from "../../components/primary-button/primary-
                 Out of stock
               } 
             </span>
-            <app-primary-button label="Add to Cart" class="mt-3"/>
+            <app-primary-button label="Add to Cart" class="mt-3" (btnClicked)="CartService.addToCart(product)"/>
           </div>
         </div>
       }
@@ -32,6 +33,8 @@ import { PrimaryButtonComponent } from "../../components/primary-button/primary-
   styles: ``
 })
 export class ProductsListComponent {
+
+    CartService =inject(CartService);
     products = signal<IProduct[]>([
       {
         id: 1,
